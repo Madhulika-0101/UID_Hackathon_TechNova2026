@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova 2026 - Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="feedback-page">
+    <header>
+        <nav class="navbar">
+            <div class="logo">TechNova 2026</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events & Registration</a></li>
+                <li><a href="feedback.html" class="active">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Participant Feedback</h2>
+            <div id="fb-messages"></div>
+
+            <form id="feedback-form" class="form-container">
+                <div class="form-group">
+                    <label for="fb-name">Student Name</label>
+                    <input type="text" id="fb-name">
+                </div>
+
+                <div class="form-group">
+                    <label for="fb-regno">Register Number <span class="required">*</span></label>
+                    <input type="text" id="fb-regno">
+                    <span class="error" id="fb-regno-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="fb-event">Event Attended <span class="required">*</span></label>
+                    <select id="fb-event">
+                        <option value="">-- Select Event --</option>
+                        <option value="Hackathon">Hackathon</option>
+                        <option value="RoboWars">RoboWars</option>
+                        <option value="Code Debugging">Code Debugging</option>
+                        <option value="Paper Presentation">Paper Presentation</option>
+                        <option value="Tech Quiz">Tech Quiz</option>
+                    </select>
+                    <span class="error" id="fb-event-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Rating (1 to 5) <span class="required">*</span></label>
+                    <div class="radio-group" id="rating-group">
+                        <input type="radio" name="rating" id="r1" value="1"><label for="r1">1</label>
+                        <input type="radio" name="rating" id="r2" value="2"><label for="r2">2</label>
+                        <input type="radio" name="rating" id="r3" value="3"><label for="r3">3</label>
+                        <input type="radio" name="rating" id="r4" value="4"><label for="r4">4</label>
+                        <input type="radio" name="rating" id="r5" value="5"><label for="r5">5</label>
+                    </div>
+                    <span class="error" id="fb-rating-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="fb-comments">Comments (Min 20 characters) <span class="required">*</span></label>
+                    <textarea id="fb-comments" rows="4"></textarea>
+                    <span class="error" id="fb-comments-error"></span>
+                </div>
+
+                <button type="submit" class="btn">Submit Feedback</button>
+            </form>
+        </section>
+
+        <section class="feedback-summary-section" style="display: none;" id="fb-summary-section">
+            <h2>Feedback Summary</h2>
+            <div class="summary-stats">
+                <h3>Average Rating: <span id="avg-rating">0</span> / 5</h3>
+            </div>
+            <div class="table-responsive">
+                <table id="fb-table">
+                    <thead>
+                        <tr>
+                            <th>Reg No</th>
+                            <th>Event</th>
+                            <th>Rating</th>
+                            <th>Comments</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fb-table-body">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TechNova Organizing Committee. All Rights Reserved.</p>
+        <p>For Further Clarifications, Call: 9756485644 </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

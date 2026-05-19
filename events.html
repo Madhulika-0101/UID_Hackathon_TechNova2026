@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova 2026 - Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="events-page">
+    <header>
+        <nav class="navbar">
+            <div class="logo">TechNova 2026</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html" class="active">Events & Registration</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="events-display">
+            <h2>Our Events</h2>
+            <div id="event-cards-container" class="grid-container" style="color: white;">
+                </div>
+        </section>
+
+        <section class="registration-section">
+            <h2>Event Registration</h2>
+            <div id="form-messages"></div>
+            
+            <form id="registration-form" class="form-container">
+                <div class="form-group">
+                    <label for="student-name">Student Name</label>
+                    <input type="text" id="student-name" placeholder="John Doe">
+                    <span class="error" id="name-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="register-no">Register Number (e.g., BL.AI.U4AID24001)</label>
+                    <input type="text" id="register-no" placeholder="BL.AI.U4AID24001">
+                    <span class="error" id="regno-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email ID</label>
+                    <input type="text" id="email" placeholder="john@example.com">
+                    <span class="error" id="email-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="text" id="mobile" placeholder="1234567890">
+                    <span class="error" id="mobile-error"></span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label for="department">Department</label>
+                        <select id="department">
+                            <option value="">Select Department</option>
+                            <option value="CSE">CSE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="MECH">MECH</option>
+                            <option value="IT">IT</option>
+                        </select>
+                    </div>
+                    <div class="form-group half-width">
+                        <label for="year-of-study">Year of Study</label>
+                        <select id="year-of-study">
+                            <option value="">Select Year</option>
+                            <option value="1">1st Year</option>
+                            <option value="2">2nd Year</option>
+                            <option value="3">3rd Year</option>
+                            <option value="4">4th Year</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="event-select">Select Event</label>
+                    <select id="event-select">
+                        <option value="">-- Choose an Event --</option>
+                        </select>
+                    <span class="error" id="event-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Participation Type</label>
+                    <div class="radio-group">
+                        <input type="radio" name="part-type" id="individual" value="Individual" checked>
+                        <label for="individual">Individual</label>
+                        
+                        <input type="radio" name="part-type" id="team" value="Team">
+                        <label for="team">Team</label>
+                    </div>
+                </div>
+
+                <div id="team-fields" style="display: none;">
+                    <div class="form-group">
+                        <label for="team-name">Team Name</label>
+                        <input type="text" id="team-name">
+                        <span class="error" id="team-name-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="team-members">Number of Team Members (2 - 4)</label>
+                        <input type="number" id="team-members" min="2" max="4">
+                        <span class="error" id="team-members-error"></span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn">Register</button>
+            </form>
+        </section>
+
+        <section class="registration-summary" style="display: none;" id="reg-summary-section">
+            <h2>Session Registrations (<span id="total-reg-count">0</span>)</h2>
+            <div class="table-responsive">
+                <table id="reg-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Reg No</th>
+                            <th>Event</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reg-table-body">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TechNova Organizing Committee. All Rights Reserved.</p>
+        <p>For Further Clarifications, Call: 9756485644 </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
